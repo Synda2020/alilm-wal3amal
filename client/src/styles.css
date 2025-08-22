@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  background: #f8fafc;
+  direction: rtl;
+  text-align: right;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f766e;
+  color: white;
+  padding: 1rem 2rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
