@@ -5,7 +5,10 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2 className="logo">📘 مركز العلم والعمل</h2>
+     <div className="logo">
+        <img src="/logo.png" alt="مركز العلم والعمل" className="logo-img" />
+        <span className="logo-text">مركز العلم والعمل</span>
+      </div>
       <ul className="nav-links">
         <li><Link to="/">الرئيسية</Link></li>
         <li><Link to="/courses">الدورات</Link></li>
