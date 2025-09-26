@@ -20,7 +20,7 @@ function Books() {
           <div key={book.id} className="border rounded-lg shadow-md bg-white">
             {book.attributes.image?.data && (
   <img
-    src={`https://YOUR-STRAPI-DOMAIN${book.attributes.image.data.attributes.url}`}
+    src={`${import.meta.env.VITE_API_URL}${book.attributes.image.data.attributes.url}`}
     alt={book.attributes.title}
     className="mt-2 rounded"
   />

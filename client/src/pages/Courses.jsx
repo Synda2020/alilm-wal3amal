@@ -8,7 +8,7 @@ function Courses() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch(`${API_BASE}/trainings?populate=*`);
+        const response = await fetch(`${API_BASE}/training?populate=*`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const result = await response.json();
