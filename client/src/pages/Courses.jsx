@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Courses.css";
-import { API_BASE, getImageUrl } from "../lib/api";
+import { API_BASE } from "../lib/api";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -8,7 +8,8 @@ function Courses() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch(`${API_BASE}/training?populate=*`);
+        // ✅ Use plural "trainings"
+        const response = await fetch(`${API_BASE}/trainings?populate=*`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const result = await response.json();
@@ -35,39 +36,40 @@ function Courses() {
       <div className="courses-grid">
         {courses.length > 0 ? (
           courses.map((course) => {
-            const attrs = course.attributes || {};
+            const attrs = course; // ✅ Strapi v5: no `attributes`, fields are top-level
+
+            // ✅ Extract image URL
+            const imageUrl = attrs.Image?.url
+              ? `${import.meta.env.VITE_API_URL}${attrs.Image.url}`
+              : null;
+
+            // ✅ Handle Rich Text Description (array of blocks)
+            let descriptionText = "لا يوجد وصف";
+            if (Array.isArray(attrs.Description)) {
+              descriptionText = attrs.Description
+                .map((block) =>
+                  block.children?.map((child) => child.text).join(" ")
+                )
+                .join("\n");
+            } else if (typeof attrs.Description === "string") {
+              descriptionText = attrs.Description;
+            }
 
             return (
               <div key={course.id} className="course-card">
                 {/* صورة الدورة */}
-                {attrs.Image?.data && (
+                {imageUrl && (
                   <img
-                    src={getImageUrl(attrs.Image.data.attributes)}
+                    src={imageUrl}
                     alt={attrs.Title || "Course image"}
                     className="course-image"
                   />
                 )}
 
                 <h2>{attrs.Title || "بدون عنوان"}</h2>
-
-                {/* الوصف (RichText) */}
-                {attrs.Description && (
-                  <p>{attrs.Description}</p>
-                )}
-
+                <p>{descriptionText}</p>
                 <p><strong>📅 التاريخ:</strong> {attrs.Date || "غير محدد"}</p>
                 <p><strong>📍 المكان:</strong> {attrs.Location || "غير محدد"}</p>
-
-                {attrs.Link && (
-                  <a
-                    href={attrs.Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="course-button"
-                  >
-                    التسجيل الآن
-                  </a>
-                )}
               </div>
             );
           })

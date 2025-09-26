@@ -1,10 +1,15 @@
 // src/lib/api.js
-export const API_BASE =
-  import.meta.env.VITE_API_BASE ?? '/api'; // Netlify will proxy this
+export const API_BASE = import.meta.env.VITE_API_URL + "/api";
 
 export const getImageUrl = (img) => {
   if (!img) return '';
+
+  // If Strapi gives object with url
   const url = img.url ?? img;
-  if (url.startsWith('/uploads')) return `/uploads${url.replace('/uploads', '')}`;
-  return url;
+
+  // If it’s already absolute (http...), just return it
+  if (url.startsWith("http")) return url;
+
+  // Otherwise, prefix with backend domain
+  return `${import.meta.env.VITE_API_URL}${url}`;
 };
