@@ -5,38 +5,48 @@ import "./Home.css";
 function Home() {
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero Section - Now with 3 images and text */}
       <section className="hero">
-        <div className="hero-text">
-          <h1>مرحبًا بكم في مركز العلم والعمل</h1>
+        <div className="hero-intro">
           <p>
-            منصتنا تهدف إلى تمكين الأفراد من خلال التعلم والعمل المشترك. 
-            نؤمن أن العلم والعمل معًا هما طريق النجاح.
+            مركز تدريبي استشاري دولي يعمل في مجالات البناء الانساني والتزكية والتعليم والمعرفة للكبار والشباب والأطفال.
+            هدفنا البناء المنهاجي للإنسان وتسديد مفاهيمه وتجويد وترشيد مهاراته البنائية المنهاجية
+            من خلال دورات متعددة ومواد علمية مرئية ومقروؤة ومسموعة.
           </p>
-          <Link to="/courses" className="btn-primary">
-            استكشف الدورات
-          </Link>
+        </div>
+        <div className="features-container">
+          {/* Feature 1: Learning */}
+          <div className="feature">
+            <Link to="/courses">
+              <img src="/icons/training.svg" alt="التعلم" className="feature-icon" />
+            </Link>
+            <Link to="/courses" className="feature-link">
+              دوراتنا
+            </Link>
+          </div>
+          
+          {/* Feature 2: Knowledge */}
+          <div className="feature">
+            <Link to="/books">
+              <img src="/icons/books.svg" alt="المعرفة" className="feature-icon" />
+            </Link>
+            <Link to="/books" className="feature-link">
+              كتبنا
+            </Link>
+          </div>
+          
+          {/* Feature 3: Application */}
+          <div className="feature">
+            <Link to="/publications">
+              <img src="/icons/isdarat.svg" alt="التطبيق" className="feature-icon" />
+            </Link>
+            <Link to="/publications" className="feature-link">
+              إصداراتنا
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about">
-        <h2>من نحن</h2>
-        <p>
-          مركز العلم والعمل هو مبادرة تعليمية تهدف إلى توفير بيئة 
-          تعليمية حديثة تجمع بين التعلم النظري والتطبيق العملي 
-          لتمكين الأفراد في مسيرتهم المهنية والشخصية.
-        </p>
-      </section>
-
-      {/* Call to Action */}
-      <section className="cta">
-        <h2>انضم إلينا اليوم</h2>
-        <p>ابدأ رحلتك التعليمية والعملية معنا، وساهم في بناء مستقبل أفضل.</p>
-        <Link to="/contact" className="btn-secondary">
-          تواصل معنا
-        </Link>
-      </section>
     </div>
   );
 }

@@ -10,7 +10,7 @@
   /* Couleurs neutres */
   --text-dark: #1f2937;
   --text-light: #6b7280;
-  --background: #f8fafc;
+  --background: transparent; /* Changed from #f8fafc to avoid grey bleed */
   --white: #ffffff;
   
   /* Gradients */
@@ -21,7 +21,7 @@ body {
   margin: 0;
   font-family: "Cairo", sans-serif;
   color: var(--text-dark);
-  background: var(--background);
+  background: url("/background.png") center/cover fixed no-repeat; /* Removed var(--background) to rely solely on image */
   direction: rtl;
   text-align: right;
   line-height: 1.6;
@@ -100,12 +100,14 @@ a:hover {
 }
 
 .nav-links li a {
-  color: white;
+  background: rgba(115, 168, 148, 0.2); /* Using your color for hover */
+  color: #73a894;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: 500;
+}
+
+/* Text container without border */
+.text-container {
+  border: none;
 }
 
 .nav-links li a:hover {
