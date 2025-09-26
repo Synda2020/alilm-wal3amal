@@ -1,0 +1,2 @@
+/api/*      https://YOUR-STRAPI-ONRENDER.onrender.com/api/:splat      200
+/uploads/*  https://YOUR-STRAPI-ONRENDER.onrender.com/uploads/:splat  200
