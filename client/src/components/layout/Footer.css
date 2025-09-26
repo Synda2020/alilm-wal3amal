@@ -1,44 +1,52 @@
 .footer {
-  background: #0f172a;
-  color: white;
-  padding: 2rem;
+  background: transparent; /* Matches styles.css */
+  padding: 1rem; /* Minimal padding */
+  direction: rtl; /* RTL for Arabic */
+  text-align: center; /* Center everything */
+  position: relative; /* Ensure proper stacking */
+  z-index: 1; /* Above other content if needed */
 }
 
-.footer-content {
+/* The horizontal line */
+.footer-line {
+  height: 1px;
+  background: var(--text-dark); /* Dark line for visibility against transparent bg */
+  margin: 0 auto 1rem auto;
+  width: 100%; /* Full width line */
+  max-width: 200px; /* Limit line width for aesthetics */
+}
+
+/* Social icons container */
+.social-icons {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1.5rem; /* Space between icons */
 }
 
-.footer-content h3, .footer-content h4 {
-  margin-bottom: 0.5rem;
-}
-
-.footer-content ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-content ul li {
-  margin: 0.3rem 0;
-}
-.footer-content ul li a {
-  color: #e2e8f0;
+/* Individual social icon links */
+.social-icons a {
+  color: var(--text-dark); /* Changed to dark color for contrast */
+  font-size: 2rem; /* Larger icon size for visibility */
+  transition: color 0.3s ease;
   text-decoration: none;
 }
-.footer-content ul li a:hover {
-  text-decoration: underline;
+
+/* Adjust icon color based on hover or background */
+.icon {
+  color: var(--text-dark); /* Ensure icons are dark */
 }
 
-.socials a {
-  color: white;
-  font-size: 1.5rem;
-  margin-right: 1rem;
+.icon:hover {
+  color: var(--primary-green); /* Green hover from your theme for contrast */
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 2rem;
-  border-top: 1px solid #334155;
-  padding-top: 1rem;
+/* Responsive: Stack icons on very small screens if needed */
+@media (max-width: 480px) {
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
 }
