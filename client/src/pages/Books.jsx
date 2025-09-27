@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./Books.css"; // Import the specific CSS file
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -69,44 +70,43 @@ function Books() {
         </button>
       </div>
 
-      {/* Books grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Books grid - Using custom CSS classes */}
+      <div className="books-grid">
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
-            <div
-              key={book.id}
-              className="card border rounded-lg shadow-md bg-white overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
+            <div key={book.id} className="books-card">
               {/* Book Image */}
               {book.image?.url && (
                 <img
                   src={`${import.meta.env.VITE_API_URL}${book.image.url}`}
                   alt={book.title}
-                  className="w-full h-64 object-cover"
                 />
               )}
 
               {/* Book Details */}
-              <div className="p-4">
-                <h2 className="text-lg font-semibold mb-2">{book.title}</h2>
-                <p className="text-gray-600">
-                  {book.description || "لا يوجد وصف"}
-                </p>
+              <div className="books-card-content">
+                <h2 className="books-card-title">
+                  {book.title}
+                </h2>
+                
                 {book.price && (
-                  <p className="text-green-600 font-bold mt-2">
+                  <p className="books-card-price">
                     {book.price} د.ت
                   </p>
                 )}
-                <p className="text-sm text-gray-500 mt-1">
-                  {book.Category || "بدون فئة"}
-                </p>
+                
+                {book.Category && (
+                  <p className="books-card-category">
+                    {book.Category}
+                  </p>
+                )}
               </div>
             </div>
           ))
         ) : (
-          <p className="text-center text-gray-500 col-span-3">
+          <div className="col-span-full text-center text-gray-500 py-8">
             ❌ لا توجد كتب في هذه الفئة
-          </p>
+          </div>
         )}
       </div>
     </div>

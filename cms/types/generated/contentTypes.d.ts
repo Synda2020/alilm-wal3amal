@@ -419,6 +419,12 @@ export interface ApiTrainingTraining extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Category: Schema.Attribute.Enumeration<
+      [
+        '\u062F\u0648\u0631\u0627\u062A \u062C\u0645\u0627\u0647\u064A\u0631\u064A\u0629 ',
+        '\u062F\u0648\u0631\u0627\u062A \u0628\u0646\u0627\u0626\u064A\u0629 ',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

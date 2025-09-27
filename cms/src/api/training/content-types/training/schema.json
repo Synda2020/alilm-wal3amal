@@ -32,6 +32,13 @@
         "videos",
         "audios"
       ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "دورات جماهيرية ",
+        "دورات بنائية "
+      ]
     }
   }
 }
