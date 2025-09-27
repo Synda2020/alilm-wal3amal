@@ -37,10 +37,10 @@ function Home() {
           
           {/* Feature 3: Application */}
           <div className="feature">
-            <Link to="/publications">
+            <Link to="/isdarat">
               <img src="/icons/isdarat.svg" alt="التطبيق" className="feature-icon" />
             </Link>
-            <Link to="/publications" className="feature-link">
+            <Link to="/isdarat" className="feature-link">
               إصداراتنا
             </Link>
           </div>

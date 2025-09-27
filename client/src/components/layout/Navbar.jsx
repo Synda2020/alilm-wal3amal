@@ -16,6 +16,7 @@ function Navbar() {
           <li><Link to="/">الرئيسية</Link></li>
           <li><Link to="/team">من نحن ؟</Link></li>
           <li><Link to="/courses">الدورات</Link></li>
+          <li><Link to="/isdarat">الاصدارات</Link></li> 
           <li><Link to="/books">الكتب</Link></li> 
           <li><Link to="/contact">تواصل معنا</Link></li>
         </ul>

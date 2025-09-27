@@ -41,13 +41,16 @@ function Courses() {
     fetchCourses();
   }, []);
 
-  // Filter courses by category with debugging
+  // Filter courses by category with debugging - Fix whitespace issue
   const filteredCourses =
     selectedCategory === "all"
       ? courses
       : courses.filter((course) => {
-          console.log(`🔍 Filtering - Course Category: "${course.Category}", Selected: "${selectedCategory}"`);
-          return course.Category === selectedCategory;
+          // Trim whitespace from both category values for comparison
+          const courseCategory = (course.Category || '').trim();
+          const selectedCategoryTrimmed = selectedCategory.trim();
+          console.log(`🔍 Filtering - Course Category: "${courseCategory}", Selected: "${selectedCategoryTrimmed}"`);
+          return courseCategory === selectedCategoryTrimmed;
         });
 
   console.log(`📊 Total Courses: ${courses.length}, Filtered Courses: ${filteredCourses.length}, Selected Category: "${selectedCategory}"`);
