@@ -29,6 +29,14 @@
         "videos",
         "audios"
       ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "كتب للأطفال",
+        "كتب للشباب",
+        "كتب للكبار"
+      ]
     }
   }
 }

@@ -384,6 +384,13 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Category: Schema.Attribute.Enumeration<
+      [
+        '\u0643\u062A\u0628 \u0644\u0644\u0623\u0637\u0641\u0627\u0644',
+        '\u0643\u062A\u0628 \u0644\u0644\u0634\u0628\u0627\u0628',
+        '\u0643\u062A\u0628 \u0644\u0644\u0643\u0628\u0627\u0631',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
