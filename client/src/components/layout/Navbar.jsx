@@ -14,9 +14,9 @@ function Navbar() {
       <nav className="nav-links-container">
         <ul className="nav-links">
           <li><Link to="/">الرئيسية</Link></li>
+          <li><Link to="/team">من نحن ؟</Link></li>
           <li><Link to="/courses">الدورات</Link></li>
-          <li><Link to="/books">الكتب</Link></li>
-          <li><Link to="/team">الفريق</Link></li>
+          <li><Link to="/books">الكتب</Link></li> 
           <li><Link to="/contact">تواصل معنا</Link></li>
         </ul>
       </nav>
