@@ -15,11 +15,13 @@
   
   /* Gradients */
   --gradient-main: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+
+  --main-font: 'Almarai', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: "Cairo", sans-serif;
+  font-family: var(--main-font);
   color: var(--text-dark);
   background: url("/background.png") center/cover fixed no-repeat; /* Relies solely on image */
   direction: rtl;

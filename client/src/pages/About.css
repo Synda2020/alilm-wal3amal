@@ -8,8 +8,9 @@
   margin-bottom: 2rem;
 }
 
+.intro-section p,
 .about-section p {
-  font-size: 1.1rem;
+  font-size: 1.8rem; /* Adjust this value to make text bigger */
   line-height: 1.8;
 }
 

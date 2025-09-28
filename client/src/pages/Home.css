@@ -1,7 +1,8 @@
 /* Full page background */
 body {
   background: url("/background.png") center/cover fixed no-repeat;
-  font-family: "Cairo", sans-serif;
+  font-family: 'Almarai', sans-serif;
+
 }
 
 /* Hero section with stronger overlay */
@@ -27,7 +28,7 @@ body {
 }
 
 .hero-intro p {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 

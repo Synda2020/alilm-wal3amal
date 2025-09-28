@@ -4,7 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
-import Team from "./pages/Team";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
 import Admin from "./pages/Admin";
@@ -21,7 +21,7 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/books" element={<Books />} />
           <Route path="/isdarat" element={<Isdarat />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/account" element={<Account />} />
           <Route path="/admin" element={<Admin />} />
