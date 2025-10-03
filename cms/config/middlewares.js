@@ -34,7 +34,9 @@ module.exports = [
       enabled: true,
       origin: [
         'https://lacglobal.up.railway.app',  // Votre frontend
-        'http://localhost:3000',                      // Dev local
+        'http://localhost:3000',              // Dev local
+        'http://localhost:5173',              // Vite dev
+
 ],
       credentials: true,
     },
